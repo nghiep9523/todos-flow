@@ -10,7 +10,7 @@ export type AddTodoProps = {
 }
 
 const AddTodo = ({ dispatch } : AddTodoProps) => {
-  let input
+  let input : ?HTMLInputElement
 
   return (
     <div>
