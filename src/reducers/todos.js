@@ -1,8 +1,7 @@
-//@flow
+import type { Todos } from '../types/todos';
+import type { Action } from '../types';
 
-const initialState : TodosStateType = []
-
-const todos = (state : TodosStateType = initialState, action: Action) => {
+const todos = (state: Todos = [], action : Action) : Todos => {
   switch (action.type) {
     case 'ADD_TODO':
       return [

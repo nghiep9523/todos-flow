@@ -2,14 +2,14 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
 import { addTodo } from '../actions'
+import type { Dispatch } from '../types'
 
-type AddTodoProps = {
+export type AddTodoProps = {
   dispatch: Dispatch
 }
 
-const AddTodo = ({ dispatch } : AddTodoProps) : ReactElement => {
+const AddTodo = ({ dispatch } : AddTodoProps) => {
   let input
 
   return (

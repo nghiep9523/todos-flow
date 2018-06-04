@@ -1,15 +1,20 @@
 //@flow
 
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
 import { setVisibilityFilter } from '../actions'
 import Link from '../components/Link'
+import type { State, Dispatch } from '../types'
+import type { VisibilityFilter } from '../types/visibilityFilter'
 
-const mapStateToProps = (state : RootStateType, ownProps: {filter: string}) : StateProps => ({
+type OwnPropsType = {
+  filter: VisibilityFilter
+};
+
+const mapStateToProps = (state : State, ownProps: OwnPropsType) => ({
   active: ownProps.filter === state.visibilityFilter
 })
 
-const mapDispatchToProps = (dispatch: Dispatch, ownProps: {filter: string}) : DispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch, ownProps: OwnPropsType) => ({
   onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
 })
 

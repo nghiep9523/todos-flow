@@ -2,17 +2,14 @@
 
 import React from 'react'
 import Todo from './Todo'
+import type { Todos, Id } from '../types/todos'
 
-type TodoProps = {
-  todos: Array<{
-    id: number,
-    completed: boolean,
-    text: string
-  }>,
-  toggleTodo: (number) => void
-}
+export type TodoProps = {
+  todos: Todos,
+  toggleTodo: (id: Id) => void
+};
 
-const TodoList = ({ todos, toggleTodo } : TodoProps) : ReactElement => (
+const TodoList = ({ todos, toggleTodo } : TodoProps) => (
   <ul>
     {todos.map(todo =>
       <Todo

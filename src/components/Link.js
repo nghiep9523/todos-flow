@@ -1,14 +1,14 @@
 //@flow
 
-import React from 'react'
+import React, { type Node } from 'react';
 
-type LinkProps = {
+export type LinkProps = {
   active: boolean,
-  children: any,
+  children?: Node,
   onClick: () => void
-}
+};
 
-const Link = ({ active, children, onClick } : LinkProps) : ReactElement => (
+const Link = ({ active, children, onClick } : LinkProps) => (
     <button
        onClick={onClick}
        disabled={active}

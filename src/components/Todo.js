@@ -1,14 +1,15 @@
 //@flow
 
 import React from 'react'
+import type { Text } from '../types/todos'
 
-type TodoProps = {
-  onClick: func,
+export type TodoProps = {
+  onClick: () => void,
   completed: boolean,
-  text: string
-}
+  text: Text
+};
 
-const Todo = ({ onClick, completed, text } : TodoProps) : ReactElement => (
+const Todo = ({ onClick, completed, text } : TodoProps) => (
   <li
     onClick={onClick}
     style={{
